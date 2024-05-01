@@ -21,8 +21,14 @@ newPrint("red", "=")
 newPrint("white", "=")
 newPrint("blue", "=")
 print()
+radio = "\033[0mRadio Gaga"
+print(f"{radio: >20}")
+queen = "\033[33mQueen"
+print(f"{queen: >16}")
 print()
-radio = "Radio Gaga"
-print(f"{radio: >15}")
-queen = "Queen"
-print(f"{queen: >10}")
+newPrint("white", "Prev")
+print()
+next = "\033[32m""Next"
+print(f"{next: >15}")
+pause = "\033[38;5;201mPause"
+print(f"{pause: >28}")
