@@ -1,11 +1,9 @@
 print("👾 MokéBeast - The Non-Copyright Generic Beast Battle Game 👾")
 print()
-name = input("Name: ").lower()
-type = input("Type: ").lower()
-move = input("Special Move: ").lower()
-hp = input("HP: ").lower()
-mp = input("MP: ").lower()
-beast = {"name": name, "type":type, "move": move, "hp": hp, "mp": mp}
+beast = {"name": None, "type":None, "move": None, "hp": None, "mp": None}
+for name,value in beast.items():
+    value = input(f"{name} ").strip().title()
+    beast[name] = value
 if beast["type"]=="earth":
   print("\033[32m", end="")
 elif beast["type"]=="air":
@@ -16,6 +14,5 @@ elif beast["type"]=="water":
   print("\033[34m", end="")
 else:
   print("\033[33m", end="")
-
 for name,value in beast.items():
     print(f"{name}: {value}")
