@@ -32,7 +32,7 @@ class Enemy(Character):
         super().__init__(name, health, magicPoints)
         self.type = type
         self.strength = strength
-
+ 
     def talk(self):
         base_output = super().talk()
         output = f"{base_output} | Type: {self.type} | Strength: {self.strength}"
