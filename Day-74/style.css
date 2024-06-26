@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 255, 149);
+}
+
+
+h1, h2 {
+  font-family: verdana;
+  font-size: 500%px;
+  color: rgb(0, 153, 255);
+  background-color: #e5ffdf;
+  text-align: center;
+}
+
+
+
+p {
+  background-color: #b8ffd0;
+  font-size: 180%;
+  font-family: verdana;
+  color: rgb(0, 102, 255)
+
+}
+
+img {
+  display: block;
+  margin-right:auto;
+
+}
