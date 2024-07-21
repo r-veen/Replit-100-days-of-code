@@ -1,7 +1,7 @@
 from types import MethodType
 from flask import Flask, redirect, request
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__, static_url_path="/Day-83/static")
 
 
 @app.route('/')
@@ -30,7 +30,7 @@ def hello():
     date = "October 25th"
     text = "Here is my first blog entry."
     page = ""
-    f = open("template/blog.html", "r")
+    f = open("Day-83/template/blog.html", "r")
     page = f.read()
     f.close()
     page = page.replace("{title}", title)
@@ -51,7 +51,7 @@ def bye():
     date = "October 25th"
     text = "Here is my last blog entry."
     page = ""
-    f = open("template/blog.html", "r")
+    f = open("Day-83/template/blog.html", "r")
     page = f.read()
     f.close()
     page = page.replace("{title}", title)
