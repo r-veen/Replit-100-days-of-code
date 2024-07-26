@@ -15,7 +15,7 @@ def createUser():
     db[form["username"]] = {"name": form["name"], "password": form["password"]}
     return redirect("/login")
   else:
-    return redirect("/signup")
+    return redirect("/signup") 
 
 
 @app.route("/dologin", methods=["POST"])
