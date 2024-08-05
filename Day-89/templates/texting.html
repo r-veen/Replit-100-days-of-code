@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsUpp</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>WhatsUpp</h1>
+    <h2>You are logged in as {{ userid }}</h2>
+    <div id="userprofile">
+        {% for index, (user, msg) in enumerate(messages) %}
+            <div class="message">
+                <p><strong>{{ user }}</strong>
+                {% if userid == '16807368' %}
+                    <button onclick="deleteMessage({{ index }})">❌</button>
+                {% endif %}
+                </p>
+                <p>{{ msg }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+    <form method="post">
+        <input type="text" name="message" placeholder="Type your message here...">
+        <button type="submit" name="send">Send</button>
+    </form>
+    <script>
+        function deleteMessage(index) {
+            fetch(`/delete_message/${index}`, {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
