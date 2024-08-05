@@ -8,22 +8,6 @@ app.secret_key = os.urandom(24)
 db["user"] = {"username": "code", "password": "banana"}
 
 
-@app.route("/login", methods=["POST"])
-def doLogin():
-  if session.get("loggedIn"):
-    return redirect("/blog")
-  keys = db.keys()
-  form = request.form
-  if form["username"] in keys:
-    if form["password"] == db[form["username"]]["password"]:
-      session["loggedIn"] = form["username"]
-      return redirect("/blog")
-    else:
-      return redirect("/login")
-  else:
-    return redirect("/login")
-
-
 @app.route("/register", methods=["POST"])
 def register():
   keys = db.keys()
@@ -57,28 +41,10 @@ def blog():
   return page
 
 
-@app.route("/logout")
-def logout():
-  session.clear()
-  return redirect("/")
-
-
-@app.route("/login")
-def login():
-  if session.get("loggedIn"):
-    return redirect("/blog")
-  page = ""
-  with open("login.html", "r") as f:
-    page = f.read()
-  return page
-
-
 @app.route('/')
 def index():
-  if session.get("loggedIn"):
-    return redirect("/blog")
-  page = """<p><a href="/login">Login</a></p>"""
-  return redirect("/login")
+  username = request.headers["X-Replit-User-Name"]
+  return redirect('/blog')
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-print("Day 29 of 100 days of code. replit", "\033[33m", end="")
+print("Day 29 of 100 days of code. Replit", "\033[33m", end="")
 print("\033[33m", sep="")
 
 def newPrint(colour, word):
