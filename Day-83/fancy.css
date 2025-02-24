@@ -1,0 +1,8 @@
+html, body {
+  background-color: aqua;
+}
+
+h1, p {
+    color:blue;
+    background-color: blueviolet;
+}
